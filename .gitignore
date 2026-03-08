@@ -1,0 +1,43 @@
+# --- 编译产物 (必须屏蔽) ---
+build/
+bin/
+out/
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.elf
+*.bin
+*.map
+
+# --- 你明确要求屏蔽的目录 ---
+# 屏蔽 lvgl 相关库（通常在 components 或 external 下）
+*lvgl*
+lvgl/
+
+# 屏蔽 platform 相关（通常包含底层驱动和交叉编译工具链）
+platform/
+*platform*
+
+# --- 库文件与第三方依赖 (根据 tree.md) ---
+# 你的 tree.md 中显示了大量的 .a 和 .so 静态库/动态库
+app/lib/
+app/src/lib/
+
+# --- 资源文件 (可选屏蔽) ---
+# 如果你的图片和字体文件很大且不经常改动，可以考虑屏蔽
+app/res/image/
+app/res/font/
+
+# --- IDE 与 系统临时文件 ---
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*.log
+
+# --- 脚本产生的临时文件 ---
+*.tmp
+#build.sh.*
